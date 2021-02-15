@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="container-fluid">
+    <br>
+    <h1 class="mt-4" style="text-align:center">Employee Data Management System</h1>
+    <br>
+    {% with msg = get_flashed_messages() %}
+    {% if msg %}
+    {% for m in msg %}
+    <div style=" text-align:center; padding: 10px; border-radius: 3px; font-size: 1rem; margin-bottom: 16px; border-width: 2px; border-style: solid;">
+        {{ m }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <br>
+    <p style="text-align:center">This application is for storing employee Records in a DataBase System<br>
+        here, I am using libraries like flask,mysql-connector.<br> and some concepts of OPPS</p>
+    <br>
+    <h3 style="text-align:center">Made By : SandEep</h3>
+</div>
+
+<!-- /#page-content-wrapper -->
+
+{% endblock  %}

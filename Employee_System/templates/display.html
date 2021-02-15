@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="container-fluid">
+
+    <h1 class="mt-4" style="text-align:center">Employee Data Management System</h1>
+    <br>
+
+
+    {% with msg = get_flashed_messages() %}
+    {% if msg %}
+    {% for m in msg %}
+    <div style=" text-align:center; padding: 10px; border-radius: 3px; font-size: 1rem; margin-bottom: 16px; border-width: 2px; border-style: solid;">
+        {{ m }}
+    </div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+    <div>
+        <form action="" method="get">
+            <div style="margin:auto;width:600px;">
+
+                <button type="submit" style="margin:5px;" name="btn" value="all">ALL EMPLOYEES</button>
+                <button type="submit" style="margin:5px;" name="btn" value="manager">ALL MANAGERS</button>
+                <button type="submit" style="margin:5px;" name="btn" value="worker">ALL WORKERS</button>
+                <button type="submit" style="margin:5px;" name="btn" value="executive">ALL EXECUTIVES</button>
+
+            </div>
+        </form>
+
+    </div>
+
+
+</div>
+<br>
+<div style=" text-align:center; padding: 10px; border-radius: 3px; font-size: 1rem; margin-bottom: 16px; border-width: 2px; border-style: solid;">
+    {%if b == 'all' %}
+    ALL EMPLOYEES
+    {% endif %}
+
+    {%if b == 'manager' %}
+    ALL MANAGERS
+    {% endif %}
+
+    {%if b == 'worker' %}
+    ALL WORKERS
+    {% endif %}
+
+    {%if b == 'executive' %}
+    ALL EXECUTIVES
+    {% endif %}
+
+</div>
+<br>
+<div>
+    <table>
+        <tr>
+            <th>Employee ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone No.</th>
+            <th>Designation</th>
+            <th>Department</th>
+            <th>Salary</th>
+            <th>Manager ID</th>
+            <th>Joining Date</th>
+        </tr>
+
+        {% for i in range(n) %}
+        <tr>
+            {% for j in range(9) %}
+            <td>{{ d[i][j] }}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+<!-- /#page-content-wrapper -->
+
+{% endblock  %}

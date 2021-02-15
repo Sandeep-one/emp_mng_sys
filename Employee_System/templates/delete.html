@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<div class="container-fluid">
+
+    <h1 class="mt-4" style="text-align:center">Employee Data Management System</h1>
+    <br>
+
+    <h4 class="mt-4" style="text-align:center">Enter Details to Delete a Record</h4>
+
+
+    {% with msg = get_flashed_messages() %}
+    {% if msg %}
+    {% for m in msg %}
+    <div style=" text-align:center; padding: 10px; border-radius: 3px; font-size: 1rem; margin-bottom: 16px; border-width: 2px; border-style: solid;">
+        {{ m }}</div>
+    {% endfor %}
+    {% endif %}
+    {% endwith %}
+
+
+    <div>
+        <div class="container" style="width:1000px">
+
+            <form action="" method="post">
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="e_id">Employee ID</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="e_id" name="e_id" placeholder="Employee ID">
+                    </div>
+                </div>
+
+
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="f_name">First Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="f_name" name="f_name" placeholder="Employee Name">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-25">
+                        <label for="l_name">Last Name</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" id="l_name" name="l_name" placeholder="Employee Last Name..">
+                    </div>
+                </div>
+
+
+
+
+                <div class="row" style="margin-left: 80px;">
+                    <input type="submit" value="Submit">
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+<!-- /#page-content-wrapper -->
+
+{% endblock  %}
