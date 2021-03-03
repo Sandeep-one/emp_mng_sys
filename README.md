@@ -1,4 +1,4 @@
-# emp_mng_sys
+# Employee Management System
 
 In this project.
 I have made an Employee Management System by using flask, MySql and opps concept.
